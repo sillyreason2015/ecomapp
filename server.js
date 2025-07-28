@@ -9,6 +9,7 @@ import otpRouter from './routes/otpRoutes.js'
 import passwordRouter from './routes/passwordRoutes.js'
 import allApis from './routes/allApis.js'
 import cookieParser from 'cookie-parser'
+import cors from 'cors'
 import dotenv from 'dotenv';
 
 
@@ -23,6 +24,7 @@ connectDb()
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cookieParser())
+app.use(cors())
 
 
 app.use('/api', userRouter)
